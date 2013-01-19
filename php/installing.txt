@@ -1,0 +1,11 @@
+====== Installieren eines Lokalen Webservers und der Programmiersprache PHP&Allen nötigen Modulen ======
+Um den Webserver installieren zu können musst du erstmal wissen, welches System du hast:
+Windows,Linux oder OSX?
+Im folgenden werden die Einzelnen schritte erklärt, die nötig sind, um den Lokalen Webserver und PHP zu installieren.
+Achtung: Hier wird nur die Installation mit Apache2 erklärt, die kompatibilität zu anderen Webservern ist nicht garantiert!
+
+===== Auf Windows Artigen Systemen =====
+FIXME Ich habe keinen Zugriff auf einen Windows Rechner...Text vorhanden, aber Screenshots benötigt
+
+===== Auf Linux Basierten Systemen=====
+FIXME kann ich schreiben, aber erstmal der rest.

@@ -1,0 +1,32 @@
+====== Hallo! ======
+Längst sind Websites keine starren Ansammlungen von Textseiten mehr. Sie erlauben den Zugriff auf riesige Datenbanken, geben dem Besucher individuelle Informationen. Die Möglichkeiten der Websprache HTML(FIXME Link zum HTML Tutorial) reicheen dazu längst nicht mehr aus.\\
+\\
+Als beliebtes Gespann dynamischer Internetseiten hat sich die Kombination aus Linux, Apache2, MySQL und PHP etabliert. Währen MySQL ein mächtiges Datenbanksystem ist, bietet PHP als Programmiersprache unzählige Möglichkeiten, Daten zu verarbeiten und zu verwalten. Apache2 stellt als Webserver die Schnittstelle zum Internet dar und zumeist wird Linux als Betriebssystem eingesetzt. In diesem Fall spricht man entsprechend der Anfangsbuchstaben (**L**inux,**A**pache2,**M**ySQL,**P**HP) oft von einem LAMP-System.\\
+\\
+Die Zweckehe eignet sich vor allem dort trefflich, wo ein Datenbank online zur verfügung gestellt werden soll. PHP liest die Daten und erzeugt daraus dynamische HTML-Seiten, die dem Besucher individuell angezeigt  werden. Als Rückkoplung kann PHP unter anderem die Zahl der Abrufe in die Datenbank eintragen, die sich wiederum in Form von Statisiken abfragen lassen.\\
+\\
+Wie bei allen Programmiersprachen gilt für PHP: Die Grundlagen lassen sich auf dem Papier erlesen, doch die Routine, die notwendig ist, um größere Projekte in Angriff zu nehmen, erlangst du nur durch eigenes Probieren ;-)
+====== Grundlegendes ======
+Täglich werden Millionen oder Milliarden Internetseiten in die Webbrowser geladen. Sie werden von den so genannten Webservern bereitgestellt und über das HTTP((**H**ypertex**t** **T**ransfer **P**rotokoll))-Protokoll übertragen. Der Webserver ist also nur eine einfache Datenschleuder?\\
+\\
+Auf den ersten Blick wirk das tatsächlich so, aber an die Webserver werden auch hohe Anforderungen gestellt:
+\\
+  *Unterstützung verschiedener Transfer-Protokolle
+  *Gleichzeitige Verbindungen mit mehreren Clients
+  *Zugriff nur auf die freigegebenen Verzeichnisse
+  *Stabilität
+  *Unterstütung von Erweiterungen
+\\
+Für den Client sieht es aber freilich so aus, als ob der Webserver nichts anderes macht, als Dokumente hin und herzuschicken.\\
+\\
+HTML-Dateien können aber eben nur statischen((etwas ist »statisch«;Stehend,bleibend)) Inhalt aufweisen. Soll sich der Inhalt ändern, muss die HTML-Datei editiert und erneut auf dem Server abgespeichert werden. Das ist für einfache Prozesse ein möglicher Weg, aber stell dir eine HTML-Seite wie diese vor:
+<code html>
+<html><head></head>
+<body>
+Heute ist Sonntag, der 08. September 2012
+</body></html>
+</code>
+Es würde einfach zu weit führen, diese Seite jeden Morgen zu ändern. Aus solchen Problemen entstanden letztlich die Websprachen.
+
+----
+[[php:|Weiter]]

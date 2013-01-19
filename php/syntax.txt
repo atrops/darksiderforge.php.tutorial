@@ -1,0 +1,173 @@
+====== Bevor es endlich losgeht... ======
+,,,muss natürlich erstmal darauf eingegangen werden, was PHP nun **ist**.
+Auf den ab jetzt nachfolgenden Seiten findest du eine Einführung in die Programmiersprache PHP. Du lernst anhand kleiner Beispiele die Syntax kennen und verstehen. Außerdem erhälst du einen Überblick über so manche Grundlegenden Funktion ;-)
+Dieser Abschnitt wird etwas lang, deswegen empfehle ich Rauchern sich ein paar Zigaretten zu holen, Kaffee Trinkern einen Kaffee, Tee-Trinker einen Tee, und falls sich davon was kombinieren lässt, ist das auch nicht zu verachten :-)
+===== Was PHP ist. =====
+PHP ist eine Skriptsprache, die Server-seitig verarbeitet wird und deren Befehle direkt in HTML-Dokumente geschrieben werden können.Um PHP-Skripte auszuführen, wird ein Server benötigt, der entsprechend konfiguriert ist. Wie du einen Server einrichtest(auf Windows **und** Linux) findest du [[installing|hier]].\\
+\\
+Die meisten Webserver sind so konfiguriert, dass Du den PHP-Dateien eine bestimmte Erweiterung geben musst. Ohne diese würde der Webserver die Datei nicht an den PHP Prozessor weiterleiten. Für gewöhnlich werden die Dateierweiterungen .php .php3 .php4 und .php5 unterstützt. **Aber:** Man ist fast immer auf der Sicheren Seite, wenn man das Dokument mit .php abspeichert.\\
+\\
+PHP kannst du mit jedem Texteditor schreiben. Ich empfehle dir einen Editor, der die geschriebene Syntax farblich hervorhebt. So behehlst du den Überblick über lange Skripts. Außerdem sollte der Editor auch das Skript direkt auf Tastendruck,oder auch sofort, überprüfen können, ohne den Browser öffnen zu müssen und die Seite neu zu laden. Meine Empfehlung ist der Editor [[http://www.geany.org|Geany]], dieser ist Kostenlos und besitzt diese beiden und noch viel mehr Features. Er unterstützt dazu auch noch Code und Klammer Ersetzung, ca. 40 Programmiersprachen, ist für Linux,Windows und Mac verfügbar und ist wirklich "high-customizable", wie manche sagen würden. Den Download ist auf der [[http://www.geany.org|Hersteller Seite]] zu finden.  \\
+\\
+===== Syntax =====
+Der PHP-Quellcode kann direkt in den HTML-Text geschrieben und zwischendurch von HTML unterbrochen werden. PHP arbeitet den Code von oben nach unten ab. Innerhalb der Begrenzungen darf kein reines HTML stehen. Du benötigst eine Kennzeichnung, die dem PHP-Prozessor mitteilt, wann PHP beginnt und endet. Es gibt dafür vier verschiedene Schreibweisen.\\
+\\
+Der XML-Stil wird in Zukunft am meisten verwendet. Ich empfehle dir, diesen ausschließlich einzusetzen. Du bist damit unabhängig von Einstellungen in der INI-Datei und damit ist eine einfache Portierbarkeit deiner Skripte von einem Server auf den anderen gewährleistet.
+<code php>
+HTML-Code...
+...
+<?php //Öffnen des Anweisungsblocks für PHP
+//PHP-Quelltext
+?> //Schließen des besagten blocks
+</code>
+oder auch
+<code php>
+<?PHP
+//PHP-Quelltext
+?>
+</code>
+Der SGML-Stil ist eine kürzere Lösung:
+<code php>
+<? //öffnen
+//PHP-Quelltext
+?> //schließen
+</code>
+Diese Variante kann mit den Erweiterungen für XML-Verarbeitung jedoch Fehler verursachen, da in XML der Öffnen/Schließen Tag genau der selbe ist.\\
+Eine weitere Variante bindet PHP ähnlich wie JavaScript in den Quelltext ein:
+<code html>
+<script language="php" runat="server">
+//PHP-Quelltext
+</script>
+</code>
+ASP-Puristen mögen die folgende Variante meist sehr:
+<code php>
+<%
+//PHP-Quelltext
+%>
+</code>
+===== Kommentare =====
+
+Kommentare sind ein wichtiges Werkzeug für den Programmierer. Sie erleichtern ihm, den Überblick über seine Skripte zu behalten. Des weiteren ist der Austausch von Quelltexten mit anderen Entwicklern einfacher, da die Kommentare auch diesen den Überblick erleichtern.\\
+\\
+Manchmal werden Kommentare auch nur genutzt, um kurzzeitig einzelne Anweisungen des Quelltextes zu deaktivieren.\\
+\\
+Willst du über mehrere Zeilen kommentieren, so sei dir diese Variante auf den Weg gegeben:
+<code php>
+<?php
+/*Mit dem Schrägstrich und dem direkt folgenden Stern öffnen wir einen Mehrzeiligen Kommentar-Block.
+Geschlossen werden solche Blöcke mit einem Sternchen und einem folgendem Schrägstrich: */
+?>
+</code>
+Für kurze Kommentare verwendest du besser die der Programmiersprache C entnommene Schreibweise:
+<code php>
+<?php
+// Durch Doppel-Schrägstriche Öffnen wir ein einzeiligen Kommentar
+// Wichtig ist  das in dieser Zeile kein Code mehr ausgeführt werden kann.
+?>
+</code>
+Kommentare dürfen auch abgeschlossenen Anweisungen folgen:
+<code php>
+<?php
+$zeit = time(); /* Kommentar */
+echo $zeit; // Kommentar
+?>
+</code>
+===== Anweisungen =====
+Anweisungen werden von oben nach unten Abgearbeitet. D.h dass zuerst Befehl1 und dann Befehl2 ausgeführt wird. Befehl2 dem ersten Befehl vorzuziehen ist ohne weiteres nicht möglich.
+PHP Unterstützt:
+  * Zuweisungen
+  * Funktionsaufrufe
+  * Bedingungen
+  * Schleifen
+Dabei ist zu beachten, dass in PHP genau wie in [[cpp:start|C(++)]] Befehle mit einem Semikolon(";") abgeschlossen werden.
+Die erste Anweisung, die dir im weiteren Verlauf  noch häufig begegnen wird, heißt echo. Dieser Befehl gibt einen festgelegten Text an den Browser aus.
+<code php>
+<HTML><HEAD><TITLE> Die Anweisung echo</TITLE>
+</HEAD>
+<BODY>
+<?php
+echo ("Meine erste Ausgabe an den Browser!"); //Anweisung
+?>
+</BODY>
+</code>
+**Ausgabe: **\\
+''Meine erste Ausgabe an PHP!''
+Aber auch hier gibt es eine alternative Schreibweise des Befehls echo:
+<code php>
+<?php
+echo "Auch diese Form von echo funktioniert.";
+?>
+</code>
+Die zweite Variante wird öfter verwendet, und sollte auch deswegen genutzt werden.
+===== Unterdrücken von Sonderzeichen =====
+
+Einige Ausdrücke können in PHP gegebenenfalls anders interpretiert werden, als du es erwartest, wie das folgende Skript demonstriert.
+<code php>
+<?php
+echo "$var ist eine "Variable".";
+?>
+</code>
+Dieses Skript wird nicht ausgeführt,  da die Anführungszeichen um das Wort Variable als PHP-Syntax gedeutet werden. Außerdem wird ''$var'' nicht ausgegeben, denn dieser Begriff wird als Variable interpretiert.\\
+Um diese Fehlinterpretation zu verhindern, setzt du einen Backslash \ vor die Sonderzeichen:
+<code php>
+<?php
+echo "\$var ist eine \"Variable\".";
+?>
+</code>
+**Ausgabe: **\\
+''$var ist eine "Variable"''
+===== Blöcke und Strukturen =====
+
+PHP-Skripts werden durch Kontrollstrukturen gesteuert. Im Wesentlichen sind das Schleifen und Bedingungen. Wie schon bei den PHP-Begrenzungen <code php><?php ?></code> müssen auch Strukturen begrenzt werden. Dazu verwendet man geschweifte Klammern ''{ Code }'' .
+<code php>
+<?php
+$test = 1;
+if ($test == 1)
+{
+   echo "Das ist eine Bedingung mit if";
+}
+?>
+</code>
+Jede Struktur, die von geschweiften Klammern eingeschlossen wird, ergibt einen sog. Anweisungsblock. Auch dieser darf durch HTML unterbrochen werden:
+<code php>
+<?php
+$test = 1;
+if ($test == 1)
+{
+ ?>
+ Das ist eine Bedingung mit if.
+ <?php
+}
+?>
+</code>
+Achte bitte darauf, dass der Block ordnungsgemäß durch eine geschweifte Klammer beendet wird. Anweisungsblöcke dürfen auch verschachtelt werden:
+<code php>
+<?php
+$test = 1;
+if ($test == 1)
+{
+   if ($test !== 0)
+   {
+     echo "Das ist eine Bedingung mit if";
+   }
+}
+?>
+</code>
+Mehr zu ''if'' kannst du [[php:programmsteuerung|HIER]] finden.
+===== PHP-Dateien einbinden =====
+
+Soll ein PHP-Skript eine weitere Datei einbinden, bietet PHP die Anweisungen ''include'', ''require'', ''include_once'' und ''require_once''. Damit bist du in der Lage, Programmstrukturen auszulagern oder einfach Inhalte in deine Seite oder dein Skript zu integrieren.
+\\
+==== Und jetzt nochmal ganz langsam ====
+Programmcode, der mit ''include'' oder ''require'' eingebunden wird, verhält sich so, als würde er genau an dieser Stelle stehen. Steht ''include'' beispielsweise innerhalb einer Funktion, so besitzen Variablen in der eingebundenen Datei auch lokale Gültigkeit.
+\\
+Verwende ''include_once'' an Stelle von ''include'', um sicher zu stellen, dass der jeweilige Programmcode nur einmal eingebunden wird.
+\\
+Bezüglich der Programmlogik verhalten sich ''include'' und ''require'' gleich. Sie unterscheiden sich lediglich in der Fehlerbehandlung. Tritt beim Einbinden mit ''include'' ein Fehler auf, so wird eine Warnung ausgegeben. Wenn du jedoch mit ''require'' so ein Problem hast, bedeutet das, dass das Skript abgebrochen wird.
+\\
+<code php>
+<?php
+ include("Dateiname");//Alternativ ohne Klammern.
+ require("Dateiname");//Genauso wie bei include.
+?>
+</code>

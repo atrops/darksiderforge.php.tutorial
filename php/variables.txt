@@ -1,0 +1,4 @@
+===== Variablen =====
+Variabeln sind, wie in vielen Programmiersprachen, das meist genutzte Sprachkonzept.\\
+
+FIXME Work in Progress

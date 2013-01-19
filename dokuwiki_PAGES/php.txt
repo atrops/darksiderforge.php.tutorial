@@ -1,0 +1,5 @@
+=====PHP=====
+Dies ist der namespace __PHP__, der zum anlegen von Tutorials gedacht ist.
+
+
+ --- //[[darksider3@live.de|Leon Giesenkämper]] 2012/10/22 11:28//

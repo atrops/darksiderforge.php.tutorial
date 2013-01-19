@@ -1,0 +1,7 @@
+=====Wiki NS PHP=====
+  * [[php]]
+  * [[php:oop]] PHP &OOP
+  * [[php:oop:methods]] Eigenschaften und Methoden(PHP-OOP)
+  * [[php:todo]] TODO im PHP Tutorial
+  * [[php:oop:firstclass]] Eigene Klassen erstellen
+  * [[php:oop:visibility]] Sichtbarkeit von Klassen

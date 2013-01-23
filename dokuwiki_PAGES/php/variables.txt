@@ -1,4 +1,83 @@
 ===== Variablen =====
-Variabeln sind, wie in vielen Programmiersprachen, das meist genutzte Sprachkonzept.\\
+Variablen sind in PHP, anders als in vielen anderen Programmiersprachen, dynamisch. Dass bedeutet, dass in PHP eine Variable niemals zwischen Datentypen unterscheidet. Also gibt es nicht wie in [[cpp:start|C(++)]] verschiedene Datentypen gibt, sondern nur Objekt - oder nicht-objekt. Dabei ist zu beachten, dass Objekte von [[php:oop:class|Klassen]] zurückgegeben werden, aber dazu [[php:oop:start|Hier]] mehr.
+
+----
+Kleiner Exkurs zu C:
+[[c:start|C]] definiert immer einen bestimmten Datentyp. Entweder ist er Nummerisch (''int,float,double'') oder eine Zeichenkette (''char''). Dabei ist nur möglich, Nummerische Datentypen zu anderen Nummerischen Typen umzuwandeln. Das nennt man Typ-Casting(FIXME Richtig?)
+
+----
+Eine Variable wird üblicherweise genutzt um einen Text, eine Zahl oder ein Objekt zu Speichern, damit diese später verarbeitet werden kann.\\
+Um eine Variable zu deklarieren ((etwas „Deklarieren“; erstellen)), braucht man zuerst das Dollarzeichen ($). Eine Variable könnte z.B so aussehen:
+<code php>
+<?php
+$Variable = "Unsere erste Variable in PHP!";
+?>
+</code>
+Wie schon erwähnt, werden auch Variablen Deklarationen mit einem Semikolon abgeschlossen. **Merke:** In PHP wird alles mit einem Semikolon abgeschlossen, mit Ausnahme von Schleifen, Funktionsdeklarationen(Bzw. Erstellung) und  Klassen (FIXME In Links umwandeln)
+Zurück zum Beispiel. Dort haben wir in der Variable ($Variable) den Satz "Unsere erste Variable in PHP!" gespeichert.\\
+Es gibt noch 3 einfache Regeln zu beachten: 
+  * Das erste Zeichen des Namens der Variable muss(!) ein Buchstabe sein.
+  * In einer Variable darf außer Buchstaben und Zahlen nur ein Unterstrich enthalten sein.
+  * Groß/Kleinschreibung wird von PHP beachtet! Also wenn wir Variable ''$proggenorg'' erstellen, können wir auch nur über den __exakten__ Namen wieder darauf zugreifen (''$proggenorg'')!
+
+===== Zeichenketten verbinden =====
+
+Es gibt in PHP die Möglichkeit Zeichenketten zu Verbinden. Dazu gibt es 2 Varianten:\\
+**A)** Wir benutzen den Zeichenketten spezifischen Operator ''.'' (Punkt).
+Wir benötigen also 2 Variablen/Zeichenketten, welche wir verbinden wollen. Wir haben also die folgenden:
+<code php>
+<?php
+$proggen = "www.Proggen";
+$org = ".org";
+?>
+</code>
+möchten wir jetzt Verbinden. Wir definieren entweder eine neue Variable, und Verbinden die beiden Variablen mit dem Zeichenkettenoperator...
+<code php>
+<?php
+$proggen = "www.Proggen"; //Zeichenkette 1
+$org = ".org"; //Zeichenkette 2
+$proggenorg = $proggen . $org; // Verbinden beider Variablen
+echo $proggen.$org; // Oeder wir verbinden die beiden Variablen nur für die Ausgabe. Es besteht kein Einfluss auf die beiden Variablen.
+?>
+</code>
+...oder wir Redfinieren eine der beiden Variablen:
+<code php>
+<?php
+$proggen = "www.Proggen";
+$org = ".org";
+$proggen = $proggen . $org; //$proggen hat jetzt noch den Inhalt 'www.Proggen'
+//Jetzt nicht mehr
+
+//Variablen ausgeben...
+echo $proggen;
+?>
+</code>
+**B)** Dass ganze Funktioniert hier wie bei Variante **A)**, es besteht nur der Unterschied, dass der Additionsoperator (+ (Plus))([[php:calculating_with_variables|Hier mehr dazu]]) verwendet wird. Also ist der einzige Unterschied, dass wir anstatt von einem ''.''(Punkt) ein ''+'' (Plus) verwenden:
+<code php>
+<?php
+$proggen = "www.Proggen"; //Zeichenkette 1
+$org = ".org"; //Zeichenkette 2
+$proggenorg = $proggen . $org; // Verbinden beider Variablen
+echo $proggen + $org; // Oeder wir verbinden die beiden Variablen nur für die Ausgabe. Es besteht kein Einfluss auf die beiden Variablen.
+?>
+</code>
+Auch bei der Zuweisung einer Variable, ist es das selbe wie oben beschrieben. Nur mit einem + (Plus)
+
+===== Variablen ausgeben =====
+
+Natürlich muss es eine Möglichkeit geben, Variablen auszugeben, und davon wurde hier auch schon genug verwendet. Hierzu existiert der Befehl ''echo''.
+So sieht eine Ausgabe mit dem ersten Beispiel aus:
+<code php>
+
+<?php
+$Variable = "Unsere erste Variable in PHP!";
+echo $Variable;
+?>
+</code>
+Ausgabe:\\
+''Unsere erste Variable in PHP!''\\
+\\
+Was wir hier tun...\\
+Wir definieren eine Variable (''$Variable'') mit einer bestimmten Zeichenkette (''Unsere erste Variable in PHP!''), und geben dann mit ''echo'' den Inhalt von ''$Variable'' aus. Also
 
 FIXME Work in Progress

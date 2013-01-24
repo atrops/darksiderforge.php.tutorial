@@ -1,0 +1,68 @@
+====== Mathematische Funktionen ======
+
+In PHP gibt es viele verschiedene Befehle zur Berechnung. Hier eine (unvollständige) Liste:
+|Befehl|Beschreibung|
+|''float sin(float $arg)''|''sin'' berechnet den Sinus des Winkels ''$arg''.|
+|''float sinh(float $arg''|Berechnet den Sinus Hyperbolikus des Parameters ''$arg'' welcher als ''(exp(arg) - exp(-arg))/2'' definiert ist.|
+|''float sqrt(float $arg)''|''sqrt'' berechnet die Quadratwurzel von ''$arg''.|
+|''float pow(float $base,$exp)''|''pow'' berechnet die Potenz von ''$exp'' zur basis ''$base'' Kurz: ''$exp^$base''|
+|''float log(float $arg[,$base])''|Berechnet den natürlichen Logarithmus von ''$arg'' beziehnugsweise den Logarithmus von ''$arg'' zur Basis ''$base'' falls der optionale zweite Parameter base gegeben ist.|
+|''float exp(float $arg)''|''exp'' berechnet **e** hoch ''$arg''|
+|''float log10(float $arg)''|Berechnet den dekadischen Logarithmus von ''$arg'', d.h. den Logarithmus zur Basis 10.|
+|''float floor(float $arg)''|Liefert die nächste ganze Zahl, die kleiner oder gleich dem Parameter ''$arg'' ist.|
+|''string dechex(int $arg)''|Rechnet ''$arg'' in eine Hexadezimalzahl um.|
+|''int hexdec(string $arg)''|Rechnet den Hexadezimalstring ''$arg'' in eine Dezimalzahl um.|
+|''string decbin(int $arg)''|Liefert eine binäre Repräsentation des Parameters ''$arg'' als String. Der größte konvertierbare Wert ist dezimal 4294967295 bzw. eine Kette von 32 einsen im Binärergebnis.|
+|''int bindec(string $arg)''|Konvertiert die Binärzahl ''$arg'' in eine Dezimalzahl. Falls ''$arg'' außerhalb von einem integer liegt, wird ''$arg'' zu einer float Zahl konvertiert.|
+|''string decoct(int $arg)''|Konvertiert ''$arg'' in eine Oktale Zahldarstellung. Der größte konvertierbare Wert ist 4294967295 (dezimal) bzw. "37777777777" (oktal).|
+|''int octdec(string $arg)''|Wandelt den oktal kodierten Eingabestring ''$arg'' in die entsprechende Dezimaldarstellung.|
+===== Ein paar Beispiele =====
+
+Stell dir vor, Du bräuchtest für einen Job eine Webpage, welche dir den Sinus (''sin'') eines nicht definierten Winkels, und den Sinus Hyperbolikus ausgibt. Dazu schreiben wir erstmal ein Formular, welches nach dem Winkel fragt, und nach der Zahl für den Sinus Hyperbolikus:
+<code html>
+<!DOCTYPE html>
+<html lang="de" charset="utf8">
+<head>
+<title>Sinus und den Hyperbolikus berechnen.
+</head>
+<body>
+<form action="sinh.php" method="POST">
+Winkel zur Berechnung des Sinus: <input type="number" name="sinus" placeholder="Winkel..." />
+Zahl für den Sinus Hyperbolikus: <input type="number" name="hyper" placeholder="123..." />
+<button>Berechnen!</button>
+</form>
+</body>
+</html>
+</code>
+Jetzt bauen wir schnell eine kleine Routine ein, welche nach abschicken des Formulars den Sinus und Hyperbolikus ausgibt.\\
+<file php code.php>
+<!DOCTYPE html>
+<html lang="de" charset="utf8">
+<head>
+<title>Sinus und den Hyperbolikus berechnen.
+</head>
+<body>
+<?php
+if(!empty($_POST['hyper']))
+{
+   $sinu=sin($_POST['sinus']);
+   $sinhu=sinh($_POST['hyper']);
+   echo "Sinus: ".$sinu."<br />Sinus Hyperbolikus: ". $sinhu;
+}
+else{
+echo '
+<form action="doku.php?id=php:math" method="POST">
+Winkel zur Berechnung des Sinus: <input type="number" name="sinus" placeholder="Winkel..." /><br />
+Zahl für den Sinus Hyperbolikus: <input type="number" name="hyper" placeholder="123..." />
+<input type="submit" value="Berechnen">
+</form>';
+}
+?>
+</body>
+</html>
+
+</file>
+Beispielhafte Ausgabe:\\
+{{:php:php.math-example1.png |}}
+Und das Ergebnis aus 22 & 23 (Nach dieser Reihenfolge):\\
+{{:php:php.math_ex1erg.png |}}

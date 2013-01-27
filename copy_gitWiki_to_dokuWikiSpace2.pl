@@ -16,7 +16,7 @@ else{
 	print "Git Repo not found..exit";
 	exit(1);
 }
-system("sudo chmod 777 -R ".$dkwGit);
+system("sudo chmod 777 -R ".$dkwGit."dokuwiki_PAGES/");
 system("cp -R -u -v ".$_dkwGit."media/ ".$_dkw."data/media/");
 system("cp -R -u -v ".$_dkwGit."media_meta/ ".$_dkw."data/media_meta/");
 system("cp -R -u -v ".$_dkwGit."php/ ".$_dkw."data/pages/php/");

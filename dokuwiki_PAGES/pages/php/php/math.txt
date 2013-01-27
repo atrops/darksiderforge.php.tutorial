@@ -1,7 +1,7 @@
 ====== Mathematische Funktionen ======
 
 In PHP gibt es viele verschiedene Befehle zur Berechnung. Hier eine (unvollständige) Liste:
-^Befehl^Beschreibung^
+|Befehl|Beschreibung|
 |''float sin(float $arg)''|''sin'' berechnet den Sinus des Winkels ''$arg''.|
 |''float sinh(float $arg''|Berechnet den Sinus Hyperbolikus des Parameters ''$arg'' welcher als ''(exp(arg) - exp(-arg))/2'' definiert ist.|
 |''float sqrt(float $arg)''|''sqrt'' berechnet die Quadratwurzel von ''$arg''.|

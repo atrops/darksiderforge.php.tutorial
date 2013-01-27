@@ -1,0 +1,13 @@
+====== Git - Referenzkarte ======
+
+|Befehl|Optionen|Auswirkungen|
+|<code>git</code>|<code>init ["Repository"]</code>|Erzeugt ein neues Verzeichnis(Leeres)(Mit dem Optionalen Namen) im Standard Ordner. |
+|<code>git add </code>|<code>.</code>|Erzeugt die erforderliche index Datei. Beinhaltet alles über die Dateien für das Projekt("." bedeutet, das ALLES über und in diesem Ordner indexiert wird).|
+|<code>git add </code>|<code>*.cpp</code>|Indexiert alle C++ Dateien (("*" Steht für alle Dateien mit der Endung .cpp, egal welchen Namen))(Dies ist ein Beispiel)|
+|<code>git add </code>|<code> -u,--update</code>|Indexiert nur Dateien, die schon im Index vorhanden sind. Wenn xyz.txt im Index ist, wird Sie neu Indexiert, wenn nicht passiert nichts|
+|<code>git add </code>|<code>--refresh</code>|Erneuert lediglich die Stat-Informationen der Angegeben Datei(en)|
+|<code>commit</code>|<code></code>|Erstellt eine Beschreibung dafür, warum die Dateien hochgeladen wurden. Öffnet dazu das Programm [[bash:cmd:vi|Vi]]|
+|<code>git config</code>|s.u|Befehle für git config|
+|<code>git config</code>|<code>--global user.name "Username"</code>|Ändert den genutzten Usernamen|
+|"((" bedeutet, dass was direkt drüber steht, genutzt wird))|<code>--global user.email Mail@Adresse</code>|<code>Mail@Adresse</code> ist die zukünftig genutzte Mail Adresse|
+FIXME Immer gebraucht ist auch hier: Vervollständigen ;)

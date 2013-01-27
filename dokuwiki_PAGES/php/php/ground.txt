@@ -1,0 +1,21 @@
+====== Grundlegendes ======
+Täglich werden Millionen oder Milliarden Internetseiten in die Webbrowser geladen. Sie werden von den so genannten Webservern bereitgestellt und über das HTTP((**H**ypertex**t** **T**ransfer **P**rotokoll))-Protokoll übertragen. Der Webserver ist also nur eine einfache Datenschleuder?\\
+\\
+Auf den ersten Blick wirk das tatsächlich so, aber an die Webserver werden auch hohe Anforderungen gestellt:
+\\
+  *Unterstützung verschiedener Transfer-Protokolle
+  *Gleichzeitige Verbindungen mit mehreren Clients
+  *Zugriff nur auf die freigegebenen Verzeichnisse
+  *Stabilität
+  *Unterstütung von Erweiterungen
+\\
+Für den Client sieht es aber freilich so aus, als ob der Webserver nichts anderes macht, als Dokumente hin und herzuschicken.\\
+\\
+HTML-Dateien können aber eben nur statischen((etwas ist »statisch«;Stehend,bleibend)) Inhalt aufweisen. Soll sich der Inhalt ändern, muss die HTML-Datei editiert und erneut auf dem Server abgespeichert werden. Das ist für einfache Prozesse ein möglicher Weg, aber stell dir eine HTML-Seite wie diese vor:
+<code html>
+<html><head></head>
+<body>
+Heute ist Sonntag, der 08. September 2012
+</body></html>
+</code>
+Es würde einfach zu weit führen, diese Seite jeden Morgen zu ändern. Aus solchen Problemen entstanden letztlich die Websprachen.

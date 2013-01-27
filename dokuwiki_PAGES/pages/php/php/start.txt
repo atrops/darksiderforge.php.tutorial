@@ -1,0 +1,22 @@
+====== Index des PHP Tutorials ======
+Willkommen!
+Schön das du dich für unser PHP Tutorial Interessierst =)\\
+Hier geben wir dir eine Einführung in die Programmiersprache PHP. Du lernst anhand von kleinen Beispielen die Syntax((Die sog. »Syntax« sind die Sprachelemente mit denen man Z.b [[php:variables|Variablen]] und Funktionen deklariert)) kennen und verstehen. Außerdem erhälst du einen Überblick über die grundlegenden Funktionen.
+
+===== Die Grundlagen von PHP =====
+  *[[php:why| Hallo! und Warum?]]\\
+  *[[php:installing|Installieren eines Lauffähigen Webservers und der Programmiersprache PHP]]
+  *[[php:syntax| Die verschiedenen Syntax-Arten von PHP erlernen]]\\
+  *[[php:variables| Variablen und Konstanten in PHP]]\\
+  *[[php:calculating_with_variables| Rechnen mit und ohne Variablen]]\\
+  *[[php:programmsteuerung| Programme mit Bedingungen(if),Schleifen(while,for,foreach) und Abbrüchen Steuern]]\\
+  *[[php:functions| Eigene Funktionen in PHP deklarieren]]((etwas »Deklarieren«; erstellen))\\
+  *[[php:arrays| Arrays in PHP]]((»Arrays«; ineinander verschachtelte Variablen))\\
+  *[[php:ground_functions| Grundlegende Funktionen]]
+    * [[php:math|Funktionen zur Mathematischen Berechnung]]
+    * [[php:string_functions|Funktionen zur Verarbeitung von Zeichenketten]](Strings((»Strings«,Zeichenketten)) )
+    * [[php:structable_string_functions|Strukturveränderne String-Funktionen]]
+    * [[php:timedate|Funktionen für Datum bzw. Zeit]]
+    * [[php:regex| Funktionen für die Bibliothek "RegEx"]]
+    * [[php:filehandling| Mit Dateien bzw. deren Inhalt umgehen]]
+Last Change:  --- //[[darksider3@live.de|Leon Giesenkämper]] 2012/12/10 01:30//

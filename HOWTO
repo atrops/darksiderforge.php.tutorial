@@ -1,0 +1,5 @@
+Um das Skript nutzen zu können,
+müssen die zwei Variablen $_dkw(Voller Systempfad zu dokuwiki Verzeichniss)
+und $_dkwGit(Auch hier Voller Systempfad. Aber zum Ordner (mit EINSCHLIEßLICH)
+dokuwiki_PAGES. Root rechte müssen durch ein Passwort erreichbar sein(oder direkt).
+Dann kann das Skript ohne Probleme ausgeführt werden.

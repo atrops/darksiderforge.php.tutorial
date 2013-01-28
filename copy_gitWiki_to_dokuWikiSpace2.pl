@@ -1,4 +1,5 @@
 use 5.012;
+#For help see HOWTO file(GERMAN)
 my $_dkw="/var/www/dokuwiki-2012-10-13/";
 my $_dkwGit="/home/leon/Arbeitsfläche/dokuwiki_PAGES/";
 if(system("test -d ".$_dkw) == 0)

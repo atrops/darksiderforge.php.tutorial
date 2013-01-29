@@ -1,0 +1,10 @@
+====== Zahlensystem Funktionen in PHP ======
+
+In PHP gibt es genauso wie in [[c:math|C(++)]] genügend Funktionen, um das momentane Zahlensystem umzurechnen. Eine Anleitung und Erklärung von Zahlensystemen findest du [[theory:number_systems:start|Hier]]. Auch hier wurde eine Liste zusammengetragen.
+^Funktion^Beschreibung^
+|''string dechex(int $arg)''|Rechnet ''$arg'' in eine Hexadezimalzahl um.|
+|''int hexdec(string $arg)''|Rechnet den Hexadezimalstring ''$arg'' in eine Dezimalzahl um.|
+|''string decbin(int $arg)''|Liefert eine binäre Repräsentation des Parameters ''$arg'' als String. Der größte konvertierbare Wert ist dezimal 4294967295 bzw. eine Kette von 32 einsen im Binärergebnis.|
+|''int bindec(string $arg)''|Konvertiert die Binärzahl ''$arg'' in eine Dezimalzahl. Falls ''$arg'' außerhalb von einem integer liegt, wird ''$arg'' zu einer float Zahl konvertiert.|
+|''string decoct(int $arg)''|Konvertiert ''$arg'' in eine Oktale Zahldarstellung. Der größte konvertierbare Wert ist 4294967295 (dezimal) bzw. "37777777777" (oktal).|
+|''int octdec(string $arg)''|Wandelt den oktal kodierten Eingabestring ''$arg'' in die entsprechende Dezimaldarstellung.|

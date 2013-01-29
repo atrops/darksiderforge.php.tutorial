@@ -14,9 +14,10 @@ Hier geben wir dir eine Einführung in die Programmiersprache PHP. Du lernst anh
   *[[php:arrays| Arrays in PHP]]((»Arrays«; ineinander verschachtelte Variablen))\\
   *[[php:ground_functions| Grundlegende Funktionen]]
     * [[php:math|Funktionen zur Mathematischen Berechnung]]
+      * [[php:math:base|Funktionen zum Umrechnen in andere Zahlensysteme]]
+    * 
     * [[php:string_functions|Funktionen zur Verarbeitung von Zeichenketten]](Strings((»Strings«,Zeichenketten)) )
     * [[php:structable_string_functions|Strukturveränderne String-Funktionen]]
     * [[php:timedate|Funktionen für Datum bzw. Zeit]]
     * [[php:regex| Funktionen für die Bibliothek "RegEx"]]
     * [[php:filehandling| Mit Dateien bzw. deren Inhalt umgehen]]
-Last Change:  --- //[[darksider3@live.de|Leon Giesenkämper]] 2012/12/10 01:30//

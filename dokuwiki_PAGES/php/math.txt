@@ -1,21 +1,18 @@
 ====== Mathematische Funktionen ======
 
-In PHP gibt es viele verschiedene Befehle zur Berechnung. Hier eine (unvollständige) Liste:
-^Befehl^Beschreibung^
-|''float sin(float $arg)''|''sin'' berechnet den Sinus des Winkels ''$arg''.|
-|''float sinh(float $arg''|Berechnet den Sinus Hyperbolikus des Parameters ''$arg'' welcher als ''(exp(arg) - exp(-arg))/2'' definiert ist.|
-|''float sqrt(float $arg)''|''sqrt'' berechnet die Quadratwurzel von ''$arg''.|
-|''float pow(float $base,$exp)''|''pow'' berechnet die Potenz von ''$exp'' zur basis ''$base'' Kurz: ''$exp^$base''|
-|''float log(float $arg[,$base])''|Berechnet den natürlichen Logarithmus von ''$arg'' beziehnugsweise den Logarithmus von ''$arg'' zur Basis ''$base'' falls der optionale zweite Parameter base gegeben ist.|
-|''float exp(float $arg)''|''exp'' berechnet **e** hoch ''$arg''|
-|''float log10(float $arg)''|Berechnet den dekadischen Logarithmus von ''$arg'', d.h. den Logarithmus zur Basis 10.|
-|''float floor(float $arg)''|Liefert die nächste ganze Zahl, die kleiner oder gleich dem Parameter ''$arg'' ist.|
-|''string dechex(int $arg)''|Rechnet ''$arg'' in eine Hexadezimalzahl um.|
-|''int hexdec(string $arg)''|Rechnet den Hexadezimalstring ''$arg'' in eine Dezimalzahl um.|
-|''string decbin(int $arg)''|Liefert eine binäre Repräsentation des Parameters ''$arg'' als String. Der größte konvertierbare Wert ist dezimal 4294967295 bzw. eine Kette von 32 einsen im Binärergebnis.|
-|''int bindec(string $arg)''|Konvertiert die Binärzahl ''$arg'' in eine Dezimalzahl. Falls ''$arg'' außerhalb von einem integer liegt, wird ''$arg'' zu einer float Zahl konvertiert.|
-|''string decoct(int $arg)''|Konvertiert ''$arg'' in eine Oktale Zahldarstellung. Der größte konvertierbare Wert ist 4294967295 (dezimal) bzw. "37777777777" (oktal).|
-|''int octdec(string $arg)''|Wandelt den oktal kodierten Eingabestring ''$arg'' in die entsprechende Dezimaldarstellung.|
+In PHP gibt es viele verschiedene Befehle zur Berechnung, welche von einfachen(exp) bis zu Hoch mathematischen (sinh) Funktionen reicht. Entsprechende Befehle für das umwandeln in andere Zahlensysteme findest du [[php:math:base|Hier]]. Eine (unvollständige) Liste:
+(Beispiele im Format ''Funktion(Parameter,..[Parameter])=>Rückgabetyp(int,float,string) Zurückgegebener Wert''
+^Befehl^Beschreibung^ Rückgabe beispiel ^
+|''float tan(float $arg)''|''tan'' berechnet den Tangens des Winkels ''$arg''.|tan(1)=>float ''1.5574077246549''|
+|''float tanh(float $arg)''| Berechnet den Tangens Hyperbolikus des Parameters ''$arg''.|tanh(1)=>float ''0.76159415595576''|
+|''float sin ( float $arg)''|''sin'' berechnet den Sinus des Winkels ''$arg''.|sin(9)=>float''0.41211848524176''|
+|''float sinh ( float $arg)''|Berechnet den Sinus Hyperbolikus des Parameters ''$arg'' welcher als ''(exp(arg) - exp(-arg))/2'' definiert ist.|sinh(1)=>float ''1.1752011936438''|
+|''float sqrt(float $arg)''|''sqrt'' berechnet die Quadratwurzel von ''$arg''.|sqrt(9)=>int/float(wenn benötigt) ''3''|
+|''float pow ( float $base, $exp)''|''pow'' berechnet die Potenz von ''$exp'' zur basis ''$base'' Kurz: ''$exp^$base''|pow(10,3)=>int/float (wenn benötigt) ''1000''|
+|''float log(float $arg[, $base])''|Berechnet den natürlichen Logarithmus von ''$arg'' beziehungsweise den Logarithmus von ''$arg'' zur Basis ''$base'' falls der optionale zweite Parameter ''$base'' gegeben ist.|log(8)=>float ''2.0794415416798''|
+|''float log10(float $arg)''|Berechnet den dekadischen Logarithmus von ''$arg'', d.h den Logarithmus zur Basis 10.|log10(2)=>float ''0.30102999566398''|
+|''float exp(float $arg)''|''exp'' berechnet **e** hoch ''$arg''|exp(1)=>float ''2.0794415416798''|
+|''float floor(float $arg)''|Liefert die nächste ganze Zahl, die kleiner oder gleich dem Parameter ''$arg'' ist.|floor(4.3561)=>int ''a''|
 ===== Ein paar Beispiele =====
 
 Stell dir vor, Du bräuchtest für einen Job eine Webpage, welche dir den Sinus (''sin'') eines nicht definierten Winkels, und den Sinus Hyperbolikus ausgibt. Dazu schreiben wir erstmal ein Formular, welches nach dem Winkel fragt, und nach der Zahl für den Sinus Hyperbolikus:

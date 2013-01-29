@@ -1,5 +1,14 @@
+**copy_gitWiki_to_dokuWikiSpace2.pl**
 Um das Skript nutzen zu können,
 müssen die zwei Variablen $_dkw(Voller Systempfad zu dokuwiki Verzeichniss)
 und $_dkwGit(Auch hier Voller Systempfad. Aber zum Ordner (mit EINSCHLIEßLICH)
 dokuwiki_PAGES. Root rechte müssen durch ein Passwort erreichbar sein(oder direkt).
 Dann kann das Skript ohne Probleme ausgeführt werden.
+(Kopiert die Dateien aus dem Git Repo in das lokale dokuwiki)
+**add_dokuwiki_space_to_git_index.pl**
+Hier muss zuerst der Pfad von folgenden Variablen geändert werden:
+my $_dPDir="/var/www/dokuwiki-2012-10-13/data/pages/"; #=DokuwikiPagesDirectory
+my $_dPDirMedia="/var/www/dokuwiki-2012-10-13/data/media/"; #=media directory
+my $_dpDirMediaMeta="/var/www/dokuwiki-2012-10-13/data/media_meta/"; #=meta directory
+my $_gitDir="/home/github/darksiderforge.php.tutorial/dokuwiki_PAGES/"; #=Repository Directory
+Dann kann man einfach den Namespace eingeben und alles funktioniert ohne Probleme.

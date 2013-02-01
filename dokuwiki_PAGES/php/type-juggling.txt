@@ -1,0 +1,25 @@
+====== Type Juggling ======
+\\
+''Type Jugglin'' bezeichnet eine Art und weise, wie eine Programmiersprache mit Variablen umgeht. In PHP ist es nicht möglich, eine Variable an einen bestimmten Typen zu binden. Ein sehr brauchbares Beispiel stellt der ''+'' Operator dar. Ist einer der Operanten ein FIXME[[|float]](Link zu C Typ "Float"), so wandelt PHP die Variable - sei es nun int,string,double - in eine FIXME [[|float]](Link zu "Float"C(++)?)) Variable. Fakt ist, dass PHP eine Bindung an einen Typ nicht braucht, und auch nicht unterstützt. Hier ein kleines Beispiel, welches das ''Type Juggling'' sehr gut demonstriert.
+<code php>
+<?php
+$foo = "0";  // $foo ist string (ASCII 48)
+$foo += 2;   // $foo ist nun eine integer (2)
+$foo = $foo + 1.3;  // $foo ist nun eine float (3.3)
+$foo = 5 + "10 Little Piggies"; // $foo ist integer (15)
+$foo = 5 + "10 Small Pigs";     // $foo ist integer (15)
+?>
+</code>
+Aber auch hier sei Vorsicht geboten: Sobald ein Buchstabe zwischen diese Umwandlung kommt, sucht PHP nach der nächsten Zahl im String. Falls keiner gefunden wird, gibt PHP entweder eine Null (0) oder gar nichts zurück.\\
+===== Type Casting =====
+
+Das umwandeln von Variablen Typen (auch ''Type Casting''(FIXME Link auf C(++) Type caste) genannt) funktioniert in PHP fast so wie in C:
+  * (int),(integer) - Umwandlung zu Integer
+  * (bool),(boolean) - Umwandeln nach Boolean
+  * (float),(double) - Umwandlung nach float
+  * (string) - Nach String umwandeln
+  * (binary) - Umwandlung zu  Binary-String(PHP 6.0 - dauert wohl noch)
+  * (array) - Zu einem Array Umwandeln
+  * (object) - In ein Objekt (Klassen etc.) Umwandeln
+  * (null) - Umwandlung nach NULL
+FIXME Links einfügen für Datentypen\\

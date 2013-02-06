@@ -21,7 +21,7 @@ Um Variablen zuzuweisen, schreibst Du ein $-Zeichen (Dollar), den Namen der Vari
 
 ?>
 </code>
-Um der Variable einen nummerischen Wert zuzuweisen, setzt Du kein  Anführungszeichen, sonst wird der Wert als Zeichenkette (String) verarbeitet. PHP kann den (FIXME Link zu Datentypen in C)[[|Datentyp]] automatisch nach ihrem zugewiesenen Wert bestimmen.\\
+Um der Variable einen nummerischen Wert zuzuweisen, setzt Du kein  Anführungszeichen, sonst wird der Wert als Zeichenkette (String) verarbeitet. PHP kann den [[glossary:datatype|Datentyp]] automatisch nach ihrem zugewiesenen Wert bestimmen.\\
 \\
 An Variablen kann auch indirekt ein Wert vergeben werden.
 <code php>
@@ -36,7 +36,7 @@ Der Wer der Variable $b ist der von $a, also 10.
 
 ===== Globale Variablen =====
 
-Sobald Strukturen wie FIXME [[|Schleifen]] oder FIXME [[|Funktionen]] auftauchen, beachtest Du bitte Folgendes:\\
+Sobald Konstrukte wie FIXME [[|Schleifen]] oder FIXME [[|Funktionen]] auftauchen, beachtest Du bitte Folgendes:\\
   * Variablen, die Du außerhalb von Funktionen deklarierst, sind innerhalb dieser nicht bekannt,
   * Jede Variable, die Du innerhalb eines Funktionsblocks deklarierst, ist außerhalb unbekannt. Man sagt auch, der Gültigkeitsbereich (Scope) der Variable ist auf die Funktion beschränkt.
 \\

@@ -9,7 +9,8 @@ Hier geben wir dir eine Einführung in die Programmiersprache PHP. Du lernst anh
   *[[php:syntax| Die verschiedenen Syntax-Arten von PHP erlernen]]\\
   *[[php:variables| Variablen und Konstanten in PHP]]\\
     * [[php:type-juggling|Type Juggling]]((Bezeichnet das Hin und herspringen von Variablen. Sodass Variablen **immer** den Typ haben, welcher gebraucht wird))
-  *[[php:calculating_with_variables| Rechnen mit und ohne Variablen]]\\
+    * [[php:arrays|Arrays]]
+  *[[php:math:start| Rechnen mit und ohne Variablen]]\\
   *[[php:programmsteuerung| Programme mit Bedingungen(if),Schleifen(while,for,foreach) und Abbrüchen Steuern]]\\
   *[[php:functions| Eigene Funktionen in PHP deklarieren]]((etwas »Deklarieren«; erstellen))\\
   *[[php:arrays| Arrays in PHP]]((»Arrays«; ineinander verschachtelte Variablen))\\

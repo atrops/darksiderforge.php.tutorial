@@ -1,83 +1,154 @@
-===== Variablen =====
-Variablen sind in PHP, anders als in vielen anderen Programmiersprachen, dynamisch. Dass bedeutet, dass in PHP eine Variable niemals zwischen Datentypen unterscheidet. Also gibt es nicht wie in [[cpp:start|C(++)]] verschiedene Datentypen gibt, sondern nur Objekt - oder nicht-objekt. Dabei ist zu beachten, dass Objekte von [[php:oop:class|Klassen]] zurückgegeben werden, aber dazu [[php:oop:start|Hier]] mehr.
+====== Variablen ======
 
-----
-Kleiner Exkurs zu C:
-[[c:start|C]] definiert immer einen bestimmten Datentyp. Entweder ist er Nummerisch (''int,float,double'') oder eine Zeichenkette (''char''). Dabei ist nur möglich, Nummerische Datentypen zu anderen Nummerischen Typen umzuwandeln. Das nennt man Typ-Casting(FIXME Richtig?)
-
-----
-Eine Variable wird üblicherweise genutzt um einen Text, eine Zahl oder ein Objekt zu Speichern, damit diese später verarbeitet werden kann.\\
-Um eine Variable zu deklarieren ((etwas „Deklarieren“; erstellen)), braucht man zuerst das Dollarzeichen ($). Eine Variable könnte z.B so aussehen:
-<code php>
-<?php
-$Variable = "Unsere erste Variable in PHP!";
-?>
-</code>
-Wie schon erwähnt, werden auch Variablen Deklarationen mit einem Semikolon abgeschlossen. **Merke:** In PHP wird alles mit einem Semikolon abgeschlossen, mit Ausnahme von Schleifen, Funktionsdeklarationen(Bzw. Erstellung) und  Klassen (FIXME In Links umwandeln)
-Zurück zum Beispiel. Dort haben wir in der Variable ($Variable) den Satz "Unsere erste Variable in PHP!" gespeichert.\\
-Es gibt noch 3 einfache Regeln zu beachten: 
-  * Das erste Zeichen des Namens der Variable muss(!) ein Buchstabe sein.
-  * In einer Variable darf außer Buchstaben und Zahlen nur ein Unterstrich enthalten sein.
-  * Groß/Kleinschreibung wird von PHP beachtet! Also wenn wir Variable ''$proggenorg'' erstellen, können wir auch nur über den __exakten__ Namen wieder darauf zugreifen (''$proggenorg'')!
-
-===== Zeichenketten verbinden =====
-
-Es gibt in PHP die Möglichkeit Zeichenketten zu Verbinden. Dazu gibt es 2 Varianten:\\
-**A)** Wir benutzen den Zeichenketten spezifischen Operator ''.'' (Punkt).
-Wir benötigen also 2 Variablen/Zeichenketten, welche wir verbinden wollen. Wir haben also die folgenden:
-<code php>
-<?php
-$proggen = "www.Proggen";
-$org = ".org";
-?>
-</code>
-möchten wir jetzt Verbinden. Wir definieren entweder eine neue Variable, und Verbinden die beiden Variablen mit dem Zeichenkettenoperator...
-<code php>
-<?php
-$proggen = "www.Proggen"; //Zeichenkette 1
-$org = ".org"; //Zeichenkette 2
-$proggenorg = $proggen . $org; // Verbinden beider Variablen
-echo $proggen.$org; // Oeder wir verbinden die beiden Variablen nur für die Ausgabe. Es besteht kein Einfluss auf die beiden Variablen.
-?>
-</code>
-...oder wir Redfinieren eine der beiden Variablen:
-<code php>
-<?php
-$proggen = "www.Proggen";
-$org = ".org";
-$proggen = $proggen . $org; //$proggen hat jetzt noch den Inhalt 'www.Proggen'
-//Jetzt nicht mehr
-
-//Variablen ausgeben...
-echo $proggen;
-?>
-</code>
-**B)** Dass ganze Funktioniert hier wie bei Variante **A)**, es besteht nur der Unterschied, dass der Additionsoperator (+ (Plus))([[php:calculating_with_variables|Hier mehr dazu]]) verwendet wird. Also ist der einzige Unterschied, dass wir anstatt von einem ''.''(Punkt) ein ''+'' (Plus) verwenden:
-<code php>
-<?php
-$proggen = "www.Proggen"; //Zeichenkette 1
-$org = ".org"; //Zeichenkette 2
-$proggenorg = $proggen . $org; // Verbinden beider Variablen
-echo $proggen + $org; // Oeder wir verbinden die beiden Variablen nur für die Ausgabe. Es besteht kein Einfluss auf die beiden Variablen.
-?>
-</code>
-Auch bei der Zuweisung einer Variable, ist es das selbe wie oben beschrieben. Nur mit einem + (Plus)
-
-===== Variablen ausgeben =====
-
-Natürlich muss es eine Möglichkeit geben, Variablen auszugeben, und davon wurde hier auch schon genug verwendet. Hierzu existiert der Befehl ''echo''.
-So sieht eine Ausgabe mit dem ersten Beispiel aus:
-<code php>
-
-<?php
-$Variable = "Unsere erste Variable in PHP!";
-echo $Variable;
-?>
-</code>
-Ausgabe:\\
-''Unsere erste Variable in PHP!''\\
+Eine Variable ermöglicht das Speichern eines Wertes an einer bestimmten Speicheradresse (FIXME [[|Speicheradresse]]). Für bequemes Arbeiten mit diesen Adressen verwenden Programmiersprachen oft die sogenannten Variablennamen.
 \\
-Was wir hier tun...\\
-Wir definieren eine Variable (''$Variable'') mit einer bestimmten Zeichenkette (''Unsere erste Variable in PHP!''), und geben dann mit ''echo'' den Inhalt von ''$Variable'' aus. Also
+\\
+Gültige Zeichen für Variablennamen sind alle Buchstaben aus dem Englischen Alphabet(Also keine Umlaute und kein ß), Ziffern und Unterstriche. Am Anfang steht ein Buchstabe oder Unterstrich, aber auf keinen Fall eine Ziffer. Selbst definierte Variablen solltest Du stets mit einem mit Buchstaben beginnen, denn  PHP stellt System-variablen zur Verfügung, die mit dem Unterstrich beginnen. Eine Ausnahme ist, wenn Du bestimmte Variablen in mehreren Skripts nutzen möchtest.
+----
+Kleine Information am Rande: PHP unterscheidet zwischen Groß- und Kleinschreibung.
+----
+\\
+Wie aus der Bezeichnung hervorgeht, ist der Inhalt variabel und kann jederzeit neu berechnet werden.\\
+===== Wertzuweisungen =====
 
-FIXME Work in Progress
+Um Variablen zuzuweisen, schreibst Du ein $-Zeichen (Dollar), den Namen der Variable und den Operator = (Gleich). Hinter dem Operator steht der Wert der Variable.
+\\
+<code php>
+<?php
+   $variablename = "Inhalt";
+   $ganzzahl = 10;
+   $fließkommazahl = 10.5;
+
+?>
+</code>
+Um der Variable einen nummerischen Wert zuzuweisen, setzt Du kein  Anführungszeichen, sonst wird der Wert als Zeichenkette (String) verarbeitet. PHP kann den (FIXME Link zu Datentypen in C)[[|Datentyp]] automatisch nach ihrem zugewiesenen Wert bestimmen.\\
+\\
+An Variablen kann auch indirekt ein Wert vergeben werden.
+<code php>
+<?php
+    $a = 10;
+    $b = $a;
+    echo "Der Wert der Variable \$b ist der von \$a, also ".$b;
+?>
+</code>
+== Ausgabe: ==
+Der Wer der Variable $b ist der von $a, also 10.
+
+===== Globale Variablen =====
+
+Sobald Strukturen wie FIXME [[|Schleifen]] oder FIXME [[|Funktionen]] auftauchen, beachtest Du bitte Folgendes:\\
+  * Variablen, die Du außerhalb von Funktionen deklarierst, sind innerhalb dieser nicht bekannt,
+  * Jede Variable, die Du innerhalb eines Funktionsblocks deklarierst, ist außerhalb unbekannt. Man sagt auch, der Gültigkeitsbereich (Scope) der Variable ist auf die Funktion beschränkt.
+\\
+<code php>
+<?php
+    $a = 10;
+    function zeige()
+    {
+        echo $a;
+    }
+?>
+</code>
+Diese Funktion gibt nicht, wie erwatet, 10 aus. Der Bildschirm bleibt leer (oder es wird ein E_NOTICE Fehler ausgegeben), da die Variable $a nicht der Funktion bekannt gemacht wurde (Also nicht im Scope der der Variable liegt).\\
+Mehr zu Funktionen findest du FIXME [[|Hier]].\\
+\\
+Um die Variable bekannt zu machen, musst du ''global'' verwenden. Damit kannst du Variablen und deren Werte strukturübergreifend  benutzt werden.
+<code php>
+<?php
+    $a = 10;
+    function zeige()
+    {
+        global $a;
+        echo $a;
+    }
+?>
+</code>
+== Ausgabe: ==
+''10''\\
+\\
+----
+Noch ein kleiner Hinweis am Rande: Verwende das Komma, um mehrere Variablen als ''global'' zu definieren..
+<code php>
+<?php
+  global $variable1, $variable2, $variable3;
+?>
+</code>
+----
+\\
+Der Server wird diese Variablen in ein Assoziatives FIXME[[php:arrays|Array]] laden. Mit ''$GLOBALS['Variablenname']''  rufst du eine ''global'' deklarierte Variable auf.\\
+<code php>
+<?php
+    global $a,$b,$c;
+    $a = 10;
+    $b = 10.5;
+    $c = "PHP";
+    function zeige()
+    {
+      echo " Der Wert der Variable \$a ist".$GLOBALS['a']." und der Wert von \$b ist ".
+      $GLOBALS['b']." und von \$c ist der Wert '".$GLOBALS['c']."'.";
+    }
+?>
+</code>
+== Ausgabe: ==
+''Der Wert der Variable $a ist 10 und der Wert von $b ist 10.5 und von $c ist der Wert 'PHP'.''\\
+Mehr zu Arrays erfährst Du [[php:arrays|Hier]].\\
+===== Statische Variablen =====
+Normalerweise verlieren Variablen nach Verlassen eines Strukturblocks, zum Beispiel einer Funktion oder einer Schleife, Ihren in der Struktur neu berechneten Wert (Nach PHP 5.1 ist dies nicht mehr der Fall, wenn Schleifen benutzt wurden.). Ist das nicht erwünscht, kannst du die Variable mit ''static'' deklarieren.\\
+<code php>
+<?php
+    function zeige()
+    {
+        $var1 = 10;
+        $var2 = $var1 + $var1;
+        echo "Der Wert der Variable ist: ".$var1."<br />";
+    }
+    zeige();
+    zeige();
+?>
+</code>
+== Ausgabe: ==
+'' Der Wert der Variable ist 20'' \\
+''Der Wert der Variable ist 20'' \\
+<code php>
+<?php
+    function zeige()
+    {
+        static $var1 = 10; //Statische Deklaration
+        $var1 = $var1 + $var1;
+        echo "Der Wert der Variable ist: ".$var1."<br />";
+    }
+    zeige();
+    zeige();
+?>
+</code>
+== Ausgabe: ==
+'' Der Wert der Variable ist 20'' \\
+''Der Wert der Variable ist 40'' \\
+Die statische deklarierte Variable behält ihren in der Struktur neu zugewiesenen Wert bei.\\
+===== Dynamische Variablen =====
+
+PHP bietet die Möglichkeit, eine Variable in einer anderen zu speichern. Im folgenden Beispiel wird zuerst der Variable $a  der Wert ''name'' zugewiesen. Im zweiten Schritt wird eine neue Variable dynamisch erzeugt, indem zwei $-Zeichen ($$) verwendet werden. Der neuen Variable wird der Wert ''Lernen'' zugewiesen. Der Variablenname der dynamisch erzeugten Variable hat den Wert der Variable $a angenommen. Das bedeutet, dass die dynamische Variable jetzt eigentlich $name heißt.
+<code php>
+<?php
+     $a = "name";
+     $$a = "Lernen";
+     echo $name;
+?>
+</code>
+== Ausgabe: ==
+''Lernen''
+\\
+----
+Diese Art der Deklaration von Variablen ist auch mit [[php:arrays|Arrays]] möglich.
+----
+
+===== Variablenfunktionen =====
+
+Durch die Funktion ''isset()'' wird eine Variable auf ihre Existenz überprüft.
+<code php>
+<?php
+    $test = "PHP";
+    $existent = isset($test);
+?>
+</code>
+Ist die Variable $test nicht deklariert, erhält $existent den Wert ''FALSE'', was falsch bedeutet. Anders in diesem Beispiel: Hier wurde $existent der Wert ''TRUE'' zugewiesen.
